@@ -46,7 +46,6 @@ namespace Firespitter.customization
         private List<List<Transform>> objectTransforms = new List<List<Transform>>();
         private List<int> fuelTankSetupList = new List<int>();
         private List<string> objectDisplayList = new List<string>();
-        private FSfuelSwitch fuelSwitch;
         private info.FSdebugMessages debug;
 
         private bool initialized = false;
@@ -161,16 +160,7 @@ namespace Firespitter.customization
                         objectTransforms[objectNumber][i].gameObject.GetComponent<Collider>().enabled = true;
                     }
                 }                
-            }            
-
-            if (useFuelSwitchModule)
-            {
-                debug.debugMessage("calling on FSfuelSwitch tank setup " + objectNumber);
-                if (objectNumber < fuelTankSetupList.Count)
-                    fuelSwitch.selectTankSetup(fuelTankSetupList[objectNumber], calledByPlayer);
-                else
-                    debug.debugMessage("no such fuel tank setup");
-            }
+            }          
 
             setCurrentObjectName();
         }
@@ -209,15 +199,6 @@ namespace Firespitter.customization
                 fuelTankSetupList = Tools.parseIntegers(fuelTankSetups);
                 objectDisplayList = Tools.parseNames(objectDisplayNames);
 
-                if (useFuelSwitchModule)
-                {
-                    fuelSwitch = part.GetComponent<FSfuelSwitch>();
-                    if (fuelSwitch == null)
-                    {
-                        useFuelSwitchModule = false;
-                        debug.debugMessage("no FSfuelSwitch module found, despite useFuelSwitchModule being true");
-                    }
-                }
                 initialized = true;
             }
         }

@@ -67,7 +67,6 @@ namespace Firespitter.customization
         private List<String> objectList = new List<string>();
         private List<String> textureDisplayList = new List<string>();
         private List<int> fuelTankSetupList = new List<int>();
-        private FSfuelSwitch fuelSwitch;
 
         private bool initialized = false;
 
@@ -153,14 +152,6 @@ namespace Firespitter.customization
                 {
                     useTextureOrMap(mat);
                 }
-            }
-            if (useFuelSwitchModule)
-            {
-                debug.debugMessage("calling on FSfuelSwitch tank setup " + selectedTexture);
-                if (selectedTexture < fuelTankSetupList.Count)
-                    fuelSwitch.selectTankSetup(fuelTankSetupList[selectedTexture], calledByPlayer);
-                else
-                    debug.debugMessage("no such fuel tank setup");
             }
         }
 
@@ -340,16 +331,6 @@ namespace Firespitter.customization
                         }
                     }
                     targetMats.Add(matList);
-                }
-
-                if (useFuelSwitchModule)
-                {
-                    fuelSwitch = part.GetComponent<FSfuelSwitch>(); // only looking for first, not supporting multiple fuel switchers
-                    if (fuelSwitch == null)
-                    {
-                        useFuelSwitchModule = false;
-                        debug.debugMessage("no FSfuelSwitch module found, despite useFuelSwitchModule being true");
-                    }
                 }
                 initialized = true;
             }
