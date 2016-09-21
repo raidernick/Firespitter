@@ -55,33 +55,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="info\FSpartDirectionGuide.cs" />
     <Compile Include="customization\FSmeshSwitch.cs" />
     <Compile Include="customization\FStextureSwitch2.cs" />
-    <Compile Include="tools\MeshCreator.cs" />
-    <Compile Include="tools\CompatabilityChecker.cs" />
-    <Compile Include="tools\FSversionCheck.cs" />
-    <Compile Include="info\FSinputVisualizer.cs" />
-    <Compile Include="info\HelpPopup.cs" />
-    <Compile Include="tools\ShipHeading.cs" />
-    <Compile Include="tools\FSgenericButtonHandler.cs" />
-    <Compile Include="tools\FSrandomNumberGenerator.cs" />
     <Compile Include="tools\FStools.cs" />
     <Compile Include="info\FSdebugMessages.cs" />
     <Compile Include="gui\FSGUIPopup.cs" />
     <Compile Include="animation\FSanimateGeneric.cs" />
-    <Compile Include="tools\FSgenericButtonHandlerID.cs" />
     <Compile Include="gui\FSGUIwindowID.cs" />
-    <Compile Include="info\FSinfoPopup.cs" />
     <Compile Include="tools\FSnodeLoader.cs" />
-    <Compile Include="info\FSradarAltitude.cs" />
-    <Compile Include="control\FSmoveCraftAtLaunch.cs" />
     <Compile Include="customization\FStextureSwitch.cs" />
-    <Compile Include="control\FStrimAdjustment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Documentation.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
